@@ -13,6 +13,24 @@ This guide provides a complete walkthrough for deploying the Coding Playground a
 
 ---
 
+## Configure Security Group
+
+1. Go to your **AWS Console** → **EC2** → **Security Groups**.
+2. Find the security group associated with your EC2 instance.
+3. Click **Edit Inbound Rules** and add the following rules:
+
+| Type       | Protocol | Port Range | Source                                 |
+| ---------- | -------- | ---------- | -------------------------------------- |
+| HTTP       | TCP      | 80         | 0.0.0.0/0                              |
+| HTTPS      | TCP      | 443        | 0.0.0.0/0                              |
+| Custom TCP | TCP      | 3000       | 0.0.0.0/0                              |
+| Custom TCP | TCP      | 5000       | 0.0.0.0/0                              |
+| SSH        | TCP      | 22         | **Your IP** (recommended for security) |
+
+After updating, **save the changes**.
+
+---
+
 ## Step 1: Initial EC2 Server Setup
 
 ```bash
