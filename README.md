@@ -1,10 +1,10 @@
-# 🚀 Coding Playground - Deployment Guide
+# Coding Playground - Deployment Guide
 
 This guide provides a complete walkthrough for deploying the Coding Playground application on an AWS EC2 instance using Docker and Docker Compose.
 
 ---
 
-## 🛠️ Prerequisites
+## Prerequisites
 
 - AWS EC2 Ubuntu Instance (20.04 or newer)
 - Security Group allowing ports: `22`, `80`, and `443`
@@ -13,7 +13,7 @@ This guide provides a complete walkthrough for deploying the Coding Playground a
 
 ---
 
-## 🔧 Step 1: Initial EC2 Server Setup
+## Step 1: Initial EC2 Server Setup
 
 ```bash
 # Update system packages
@@ -37,7 +37,7 @@ exit
 
 ---
 
-## 📁 Step 2: Clone the Repository
+## Step 2: Clone the Repository
 
 ```bash
 git clone https://github.com/himanshusingla123/coding-playground.git
@@ -46,7 +46,7 @@ cd coding-playground
 
 ---
 
-## 🧠 Step 3: Update Frontend API Configuration
+## Step 3: Update Frontend API Configuration
 
 ```bash
 sed -i "s|http://localhost:5000/api|/api|g" frontend/src/services/api.js
@@ -54,7 +54,7 @@ sed -i "s|http://localhost:5000/api|/api|g" frontend/src/services/api.js
 
 ---
 
-## 📦 Step 4: Install Application Dependencies
+## Step 4: Install Application Dependencies
 
 ```bash
 cd backend && npm install && cd ..
@@ -63,7 +63,7 @@ cd frontend && npm install && cd ..
 
 ---
 
-## 🚀 Step 5: Deploy the Application
+## Step 5: Deploy the Application
 
 ```bash
 # Run deployment
@@ -78,7 +78,7 @@ docker-compose logs -f
 
 ---
 
-## 🌐 Step 6: Access the Application
+## Step 6: Access the Application
 
 1. Open [AWS Console → EC2 → Instances](https://console.aws.amazon.com/ec2/)
 2. Select your instance
@@ -87,7 +87,7 @@ docker-compose logs -f
 
 ---
 
-## 🌍 Step 7: Set Up Custom Domain (Optional)
+## Step 7: Set Up Custom Domain (Optional)
 
 ### 7.1 Get a Domain
 
@@ -109,7 +109,7 @@ sudo certbot certonly --standalone -d yourdomain.com -d www.yourdomain.com
 
 ---
 
-## 🔁 Step 8: Set Up Auto-Restart on Reboot
+## Step 8: Set Up Auto-Restart on Reboot
 
 ```bash
 sudo cat > /etc/systemd/system/coding-playground.service << 'EOF'
@@ -153,7 +153,7 @@ docker-compose logs -f
 
 ---
 
-## ✅ Deployment Complete!
+## Deployment Complete!
 
 Visit your application in the browser at:
 
@@ -167,12 +167,4 @@ Or
 https://yourdomain.com
 ```
 
----
 
-> 💡 Tip: Always keep your Docker, Node, and application dependencies up to date for better security and performance.
-
-```
-
----
-
-Let me know if you'd like to **add badges**, **CI/CD**, or **GitHub Actions deployment** steps too!
