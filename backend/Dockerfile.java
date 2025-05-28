@@ -1,5 +1,5 @@
-FROM openjdk:11-jre-slim
+FROM openjdk:11
 
 WORKDIR /code
 
-CMD ["java", "Main"]
+CMD ["bash", "-c", "javac Main.java && java Main"]

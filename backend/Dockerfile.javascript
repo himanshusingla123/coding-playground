@@ -1,7 +1,6 @@
-FROM node:16-alpine
+FROM node:16
 
 WORKDIR /code
 
-RUN npm install -g canvas
-
 CMD ["node", "main.js"]
+
