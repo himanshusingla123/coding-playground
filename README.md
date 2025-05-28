@@ -1,7 +1,3 @@
-Here is a clean, professional, and step-by-step `README.md` file for your **Coding Playground** deployment on AWS EC2 using Docker and Docker Compose.
-
----
-
 # 🚀 Coding Playground - Deployment Guide
 
 This guide provides a complete walkthrough for deploying the Coding Playground application on an AWS EC2 instance using Docker and Docker Compose.
