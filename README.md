@@ -2,7 +2,6 @@ Here is a clean, professional, and step-by-step `README.md` file for your **Codi
 
 ---
 
-````markdown
 # 🚀 Coding Playground - Deployment Guide
 
 This guide provides a complete walkthrough for deploying the Coding Playground application on an AWS EC2 instance using Docker and Docker Compose.
@@ -181,4 +180,3 @@ https://yourdomain.com
 ---
 
 Let me know if you'd like to **add badges**, **CI/CD**, or **GitHub Actions deployment** steps too!
-```
