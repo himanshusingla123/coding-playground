@@ -1,0 +1,292 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+}
+
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: #2d2d2d !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand {
+  flex: 1;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.navbar-brand h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.tagline {
+  font-size: 0.875rem;
+  opacity: 0.8;
+}
+
+.navbar-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.language-selector {
+  min-width: 150px;
+  background-color: #3c3c3c;
+  color: #d4d4d4;
+}
+
+.font-size-control {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: #3c3c3c;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.run-button {
+  background-color: #0e7490 !important;
+  color: white !important;
+  font-weight: 600;
+  padding: 8px 20px !important;
+}
+
+.run-button:hover {
+  background-color: #0891b2 !important;
+}
+
+.run-button:disabled {
+  background-color: #4b5563 !important;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Split Pane Overrides */
+.Resizer {
+  background: #2d2d2d;
+  z-index: 1;
+  box-sizing: border-box;
+  background-clip: padding-box;
+}
+
+.Resizer:hover {
+  transition: all 0.2s ease;
+}
+
+.Resizer.horizontal {
+  height: 8px;
+  margin: -4px 0;
+  cursor: row-resize;
+}
+
+.Resizer.horizontal:hover {
+  background-color: #0e7490;
+}
+
+.Resizer.vertical {
+  width: 8px;
+  margin: 0 -4px;
+  cursor: col-resize;
+}
+
+.Resizer.vertical:hover {
+  background-color: #0e7490;
+}
+
+/* Editor Container */
+.editor-container {
+  height: 100%;
+  background-color: #1e1e1e;
+}
+
+/* Terminal Styles */
+.terminal-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #1e1e1e;
+}
+
+.terminal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  background-color: #2d2d2d;
+  border-bottom: 1px solid #3c3c3c;
+}
+
+.terminal-title {
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.terminal-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.running-indicator {
+  color: #10b981;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.875rem;
+}
+
+.terminal-content {
+  flex: 1;
+  padding: 8px;
+  overflow: hidden;
+}
+
+/* Output Display */
+.output-display {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #252526;
+}
+
+.tab-content {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.console-output {
+  font-family: 'Consolas', 'Courier New', monospace;
+  white-space: pre-wrap;
+  color: #9ca3af;
+}
+
+.graphics-output {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.no-graphics {
+  text-align: center;
+  color: #6b7280;
+}
+
+.no-graphics .hint {
+  font-size: 0.875rem;
+  margin-top: 8px;
+}
+
+.help-tips {
+  max-width: 600px;
+}
+
+.help-tips h3 {
+  color: #0e7490;
+  margin-bottom: 12px;
+  font-size: 1.25rem;
+}
+
+.help-tips ul {
+  list-style: none;
+  padding: 0;
+}
+
+.help-tips li {
+  margin-bottom: 8px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.help-tips li:before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #0e7490;
+}
+
+.challenges {
+  display: grid;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.challenge {
+  background-color: #1e1e1e;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #3c3c3c;
+}
+
+.challenge h4 {
+  color: #10b981;
+  margin-bottom: 8px;
+}
+
+.challenge p {
+  font-size: 0.875rem;
+  color: #9ca3af;
+}
+
+/* Light Theme Overrides */
+body.light-theme {
+  background-color: #ffffff;
+  color: #1f2937;
+}
+
+body.light-theme .app {
+  background-color: #f3f4f6;
+}
+
+body.light-theme .navbar {
+  background-color: #ffffff !important;
+  color: #1f2937;
+}
+
+body.light-theme .editor-container,
+body.light-theme .terminal-container,
+body.light-theme .output-display {
+  background-color: #ffffff;
+}
+
+body.light-theme .terminal-header {
+  background-color: #f3f4f6;
+  border-bottom-color: #e5e7eb;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar-brand h1 {
+    font-size: 1.25rem;
+  }
+  
+  .tagline {
+    display: none;
+  }
+  
+  .font-size-control {
+    display: none;
+  }
+}
